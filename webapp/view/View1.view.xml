@@ -1,0 +1,59 @@
+<mvc:View controllerName="flexiblecollayout.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f ="sap.f"
+    displayBlock="true"
+    xmlns="sap.m">
+ <f:DynamicPage id="idDynamicPage" toggleHeaderOnTitleClick = "false">
+ <!-- Dynamic Page tile -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                <Title text ="Products"></Title>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+            <!-- Dynamic Content -->
+            <f:content>
+                  <VBox id="idVBox" fitContainer = "true">
+                     <OverflowToolbar id="idOverFlowToobar" class = "sapFDynamicPageAlignContent">
+                            <ToolbarSpacer id="idToolbarSpacer" />
+                            <SearchField search=".onSearch" width="17.5rem"/>
+                     </OverflowToolbar> 
+                    <Table
+                          id = "IdProductList"
+                          inset = "false"
+                          items= "{
+                              path: '/Products',
+                              sorter: {
+                                  path:'ProductID'
+                              }
+                          }"
+                          class= "sapFDynamicPageAlignContent" width="auto">
+                          <columns>
+                            <Column width="12em">
+                              <Text text="Products"/>
+                            </Column>
+                            <Column hAlign = "End">
+                              <Text text="Price"></Text>
+                            </Column>
+                          </columns>
+                          <items>
+                            <ColumnListItem type="Navigation" press=".onNav">
+                               <cells>
+                                  <ObjectIdentifier title="{ProductID}" text="{ProductName}"></ObjectIdentifier>
+                                  <ObjectNumber number="{UnitPrice}" unit="EUR"></ObjectNumber>
+                               </cells>
+                            </ColumnListItem>
+                          </items>
+                          </Table>
+                  </VBox>
+            </f:content>
+            <f:footer>
+               <OverflowToolbar >
+                    <ToolbarSpacer/>
+                    <Button type="Accept" text="Accept"/>
+                    <Button type="Reject" text="Reject"/>
+               </OverflowToolbar>
+            </f:footer>
+ </f:DynamicPage>
+</mvc:View>

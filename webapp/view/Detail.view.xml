@@ -1,0 +1,78 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns = "sap.uxap"
+        xmlns:m = "sap.m"
+        xmlns:f="sap.f"
+        xmlns:form= "sap.ui.layout.form">
+        <ObjectPageLayout 
+            id="objectPageLayout"
+            showTitleInHeaderContent="true"
+            alwaysShowContentHeader="false"
+            preserveHeaderStateOnScroll="false"
+            headerContentPinnable="true"
+            isChildPage="true"
+            upperCaseAnchorBar="false"
+        >
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle >
+              <actions>
+                 <m:ToggleButton
+						text="Edit"
+						type="Emphasized"/>
+					<m:Button
+						text="Delete"
+						type="Transparent"/>
+					<m:Button
+						text="Copy"
+						type="Transparent"/>
+					<m:Button
+						icon="sap-icon://action"
+						type="Transparent"/>
+              </actions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+        <headerContent>
+           <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+               <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
+                   <m:Label text="Main Category"/>
+               </m:VBox>
+               <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" > 
+                   <m:Label text="SubCategory"/>
+               </m:VBox>
+                <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
+                    <m:Label text ="Price"/>
+                </m:VBox>
+           </m:FlexBox>
+        </headerContent>
+
+        <sections>
+           <ObjectPageSection id="idObjectPageSection" title="General Information">
+              <subSections>
+                 <ObjectPageSubSection id="idObjectPageSubSection" title="Form">
+                    <blocks>
+                       <form:SimpleForm 
+                                id="idForm"
+                                maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">
+                          <form:content>
+                             <m:Label id="idLabel1" text="Quantity"/>
+                             <m:Text text="{QuantityPerUnit}"></m:Text>
+                             <m:Label id="idLabel2" text="Product Name"/>
+                             <m:Text text="{ProductName}"></m:Text>
+                          </form:content>
+                       </form:SimpleForm>
+                    </blocks>
+                 </ObjectPageSubSection>
+              </subSections>
+           </ObjectPageSection>
+        </sections>
+        
+        </ObjectPageLayout>
+        </mvc:View>
