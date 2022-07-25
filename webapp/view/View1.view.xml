@@ -17,18 +17,30 @@
                   <VBox id="idVBox" fitContainer = "true">
                      <OverflowToolbar id="idOverFlowToobar" class = "sapFDynamicPageAlignContent">
                             <ToolbarSpacer id="idToolbarSpacer" />
+                           
                             <SearchField search=".onSearch" width="17.5rem"/>
+                           
                      </OverflowToolbar> 
                     <Table
                           id = "IdProductList"
                           inset = "false"
                           items= "{
                               path: '/Products',
+                              parameters:{
+                                  $count:true
+                              },
                               sorter: {
                                   path:'ProductID'
                               }
                           }"
                           class= "sapFDynamicPageAlignContent" width="auto">
+                          <headerToolbar>
+                             <Toolbar >
+                               <content>
+                                  <Title id="IDCount" text="{$count} Products"></Title>
+                               </content>
+                             </Toolbar>
+                          </headerToolbar>
                           <columns>
                             <Column width="12em">
                               <Text text="Products"/>

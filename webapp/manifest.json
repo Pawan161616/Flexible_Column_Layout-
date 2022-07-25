@@ -94,9 +94,16 @@
           "name": "RouteView1",
           "pattern": ":?query:",
           "target": [
-            "TargetView1"
+            "TargetView1","TargetDetail"
           ]
-        }
+        },
+        {
+            "name": "RDetails",
+            "pattern": "RDetails/{ID}",
+            "target": [
+              "TargetView1","TargetDetail"
+            ]
+          }
       ],
       "targets": {
         "TargetView1": {
@@ -106,7 +113,15 @@
           "viewId": "View1",
           "viewName": "View1",
           "controlAggregation": "beginColumnPages"
-        }
+        },
+        "TargetDetail": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "Detail",
+            "viewName": "Detail",
+            "controlAggregation": "midColumnPages"
+          }
       }
     },
     "rootView": {
