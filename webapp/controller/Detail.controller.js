@@ -14,21 +14,23 @@ sap.ui.define([
          _onObjectMatched: function(oEvent){
              var sId = oEvent.getParameters().arguments.ID;
             var sPath = `/Products(${sId})`;
-            //  this.getView().bindElement({
-            //      path: sPath
-            //  });
-            var oDataModel = this.getView().getModel();
-            oDataModel.read(sPath,{success: function(oData,error){
+             this.getView().bindElement(sPath,{
+                 expand: "Category"
+             });
+
+
+        //     var oDataModel = this.getView().getModel();
+        //     oDataModel.read(sPath,{success: function(oData,error){
                 
-                 var payload = {
-                     "ProductID":oData.ProductID,
-                     "ProductName":oData.ProductName,
-                     "QuantityPerUnit":oData.QuantityPerUnit,
-                     "UnitPrice":oData.UnitPrice
-                 };
-                 this.getView().getModel("locModel").setProperty("/Product",payload);
-            }.bind(this)
-        });
+        //          var payload = {
+        //              "ProductID":oData.ProductID,
+        //              "ProductName":oData.ProductName,
+        //              "QuantityPerUnit":oData.QuantityPerUnit,
+        //              "UnitPrice":oData.UnitPrice
+        //          };
+        //          this.getView().getModel("locModel").setProperty("/Product",payload);
+        //     }.bind(this)
+        // });
 
          }
     });

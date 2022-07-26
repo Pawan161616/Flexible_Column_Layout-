@@ -41,10 +41,13 @@ sap.ui.define([
                
                 var sQuery = oEvent.getParameter("query");
                 if(sQuery && sQuery.length>0){
-                   var oTableProductName = [new Filter("ProductName", FilterOperator.Contains,sQuery)];
+                   var oTableProductName = new Filter(
+                                               "ProductName",
+                                                FilterOperator.Contains,
+                                                sQuery
+                                            );
                 }
                 oTable.getBinding("items").filter(oTableProductName);
             }
-
         });
     });

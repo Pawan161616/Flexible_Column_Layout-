@@ -34,21 +34,20 @@
         <headerContent>
            <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
                <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
-                   <m:Label text="Main Category"/>
-               </m:VBox>
-               <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" > 
-                   <m:Label text="SubCategory"/>
-               </m:VBox>
+                   <m:Label text="Category"/>
+                   	<m:Text text="{Category/CategoryName}"/>
+                </m:VBox>
                 <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd" >
                     <m:Label text ="Price"/>
+                    <m:Text text="{UnitPrice}"/>
                 </m:VBox>
            </m:FlexBox>
         </headerContent>
 
         <sections>
-           <ObjectPageSection id="idObjectPageSection" title="General Information">
+           <ObjectPageSection id="idObjectPageSection1" title="General Information">
               <subSections>
-                 <ObjectPageSubSection id="idObjectPageSubSection" title="Form">
+                 <ObjectPageSubSection id="idObjectPageSubSection">
                     <blocks>
                        <form:SimpleForm 
                                 id="idForm"
@@ -62,15 +61,37 @@
 								columnsL="1"
 								columnsM="1">
                           <form:content>
-                             <m:Label id="idLabel1" text="Quantity"/>
-                             <m:Text text="{locModel>/Product/QuantityPerUnit}"></m:Text>
                              <m:Label id="idLabel2" text="Product Name"/>
-                             <m:Text text="{locModel>/Product/ProductName}"></m:Text>
-                          </form:content>
+                             <m:Text text="{ProductName}"></m:Text>
+                             <m:Label id="idLabel1" text="Category"/>
+                             <m:Text text="{Category/Description}"></m:Text>
+                           </form:content>
                        </form:SimpleForm>
                     </blocks>
                  </ObjectPageSubSection>
               </subSections>
+           </ObjectPageSection>
+           <ObjectPageSection title="Supplier" >
+                <subSections>
+                   <ObjectPageSubSection >
+                       <blocks>
+                          <m:List items="{/Suppliers}">
+                            <m:items>
+                                      <m:StandardListItem navigated = "true" titleTextDirection="LTR"
+                                        title="{CompanyName}"/>
+                          </m:items>
+                          <!-- <m:infoToolbar>
+                            <m:Toolbar>
+                          
+                               <m:Button text="hello"/>
+                        
+                             <m:Toolbar>
+                          </m:infoToolbar> -->
+                          </m:List>
+                       </blocks>
+                   </ObjectPageSubSection>
+                </subSections>
+              
            </ObjectPageSection>
         </sections>
         
