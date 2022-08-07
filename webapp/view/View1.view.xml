@@ -52,7 +52,7 @@
                           <items>
                             <ColumnListItem type="Navigation" press=".onNav">
                                <cells>
-                                  <ObjectIdentifier title="{ProductID}" text="{ProductName}"></ObjectIdentifier>
+                                  <ObjectIdentifier class="c-listItems" title="{ProductID}" text="{ProductName}"></ObjectIdentifier>
                                   <ObjectNumber number="{UnitPrice}" unit="EUR"></ObjectNumber>
                                </cells>
                             </ColumnListItem>

@@ -59,12 +59,13 @@
 								emptySpanL="0"
 								emptySpanM="0"
 								columnsL="1"
-								columnsM="1">
+								columnsM="1"
+                                class="c-Form">
                           <form:content>
-                             <m:Label id="idLabel2" text="Product Name"/>
-                             <m:Text text="{ProductName}"></m:Text>
-                             <m:Label id="idLabel1" text="Category"/>
-                             <m:Text text="{Category/Description}"></m:Text>
+                             <m:Label class="c-label" id="idLabel2" text="Product Name"/>
+                             <m:Text class="c-txt" text="{ProductName}"></m:Text>
+                             <m:Label class="c-label" id="idLabel1" text="Category"/>
+                             <m:Text class="c-txt" text="{Category/Description}"></m:Text>
                            </form:content>
                        </form:SimpleForm>
                     </blocks>
@@ -77,7 +78,7 @@
                        <blocks>
                           <m:List items="{/Suppliers}">
                             <m:items>
-                                      <m:StandardListItem navigated = "true" titleTextDirection="LTR"
+                                      <m:StandardListItem type = "Navigation" titleTextDirection="LTR" press=".onSupplierPress"
                                         title="{CompanyName}"/>
                           </m:items>
                           <!-- <m:infoToolbar>

@@ -81,7 +81,7 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
         "viewType": "XML",
         "async": true,
         "viewPath": "flexiblecollayout.view",
@@ -103,6 +103,13 @@
             "target": [
               "TargetView1","TargetDetail"
             ]
+          },
+          {
+              "name":"Rdetaildetail",
+              "pattern":"RDetails/{ID}/Rdetaildetail/{SupplierID}",
+              "target":[
+                "TargetView1","TargetDetail","TargetDetailDetail"
+              ]
           }
       ],
       "targets": {
@@ -121,6 +128,14 @@
             "viewId": "Detail",
             "viewName": "Detail",
             "controlAggregation": "midColumnPages"
+          },
+          "TargetDetailDetail":{
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "DetailDetail",
+            "viewName": "DetailDetail",
+            "controlAggregation": "endColumnPages"
           }
       }
     },

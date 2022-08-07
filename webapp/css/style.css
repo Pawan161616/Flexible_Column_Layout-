@@ -1,1 +1,25 @@
 /* Enter your custom styles here */
+/* *{
+    margin:0;
+    padding:0;
+} */
+.c-Form {
+background-color: rgb(66, 180, 182);
+height: max-content;
+}
+.c-label {
+    color: darkblue;
+    font-size: large;
+    font-weight: bold;
+    text-decoration:underline;
+}
+/* .c-listItems>div:nth-child(2)>.sapMText:hover(){
+    text-decoration: underline;
+} */
+/* .c-listItems>div:nth-child(2)>.sapMText{
+    text-decoration: underline;
+    font-weight:Bold;
+    color:darkblue;
+} */
+/* .c-listItems>div:nth-child(2)>.sapMText  */
+
